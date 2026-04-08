@@ -111,8 +111,6 @@ def is_tesseract_ready() -> Tuple[bool, str]:
         return True, version
     except Exception:
         return False, ""
-
-
 def ocr_with_confidence(img: Image.Image) -> Tuple[str, float]:
     data = pytesseract.image_to_data(img, output_type=pytesseract.Output.DICT)
     confidences = []
@@ -386,7 +384,6 @@ def main() -> None:
         )
         return
     st.caption(f"OCR engine ready (Tesseract {tesseract_version}).")
-
     with st.expander("Quick Start: How to use + Excel/Google Sheets"):
         st.markdown(
             """
